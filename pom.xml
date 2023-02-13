@@ -15,6 +15,8 @@
 	<description>API Usuários </description>
 	<properties>
 		<java.version>11</java.version>
+		<cucumber.version>6.10.4</cucumber.version>
+		<project.build.sourceEnconding>UTF-8</project.build.sourceEnconding>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -72,6 +74,19 @@
 			<version>2.1.214</version>
 			<scope>test</scope>
 		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>7.11.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>7.11.1</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -87,6 +102,26 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>3.14.0</version>
+				<executions>        <execution>
+					<id>execution</id>
+					<phase>verify</phase>
+					<goals>
+						<goal>generate</goal>
+					</goals>
+					<configuration>
+						<projectName>${project.name} - System Testing Execution Report</projectName>
+						<outputDirectory>${project.build.directory}/reports</outputDirectory>
+						<jsonFiles>
+							<param>${project.build.directory}/reports/CucumberReport.json</param>
+						</jsonFiles>
+						<parallelTesting>true</parallelTesting>
+					</configuration>
+				</execution>    </executions>
 			</plugin>
 		</plugins>
 	</build>
