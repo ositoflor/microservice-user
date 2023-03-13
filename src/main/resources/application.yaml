@@ -1,9 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://containers-us-west-51.railway.app/railway
+    url: jdbc:mysql://containers-us-west-51.railway.app:6800/railway
     username: root
     password: XauymfdlKMlXet2RN8av
-    port: 6800
   jpa:
      hibernate:
       ddl-auto: update
