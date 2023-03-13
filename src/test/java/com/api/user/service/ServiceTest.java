@@ -88,7 +88,7 @@ public class ServiceTest {
         user1.setId(1);
         user1.setAddress(address);
         address.setIdAddress(1);
-        assertEquals(user1, response);
+        assertEquals(user1, response)e
     }
 
     @Test
